@@ -2,13 +2,13 @@ public abstract class Pizza implements Prepare, Deliver {
 
     private int weight;
     private int price;
+    private String type;
 
-    public Pizza() {
-    }
 
-    public Pizza(int weight, int price) {
+    public Pizza(int weight, int price, String type) {
         this.weight = weight;
         this.price = price;
+        this.type = type;
     }
 
     public int getWeight() {
@@ -27,8 +27,15 @@ public abstract class Pizza implements Prepare, Deliver {
         this.price = price;
     }
 
+    public String getType() {
+        return type;
+    }
 
+    public void setType(String type) {
+        this.type = type;
+    }
 
+    public abstract void pizza ();
 
 
     @Override
@@ -36,6 +43,7 @@ public abstract class Pizza implements Prepare, Deliver {
         return "Pizza{" +
                 "weight=" + weight +
                 ", price=" + price +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

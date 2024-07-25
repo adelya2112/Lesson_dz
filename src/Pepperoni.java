@@ -2,13 +2,27 @@ public class Pepperoni extends Pizza  {
 
     private boolean isSpicyPizza;
 
-    public boolean SpicyPizza (){
+    public boolean spicyPizza (){
         if (isSpicyPizza){
-            return true;
-        }else {
-            return false;
+            isSpicyPizza = false;
+            return isSpicyPizza;
         }
+        isSpicyPizza = true;
+        return isSpicyPizza;
 
+    }
+
+    public Pepperoni(int weight, int price, String type, boolean isSpicyPizza) {
+        super(weight, price, type);
+        this.isSpicyPizza = isSpicyPizza;
+    }
+
+    public boolean isSpicyPizza() {
+        return isSpicyPizza;
+    }
+
+    public void setSpicyPizza(boolean spicyPizza) {
+        isSpicyPizza = spicyPizza;
     }
 
     @Override
@@ -19,5 +33,21 @@ public class Pepperoni extends Pizza  {
     @Override
     public void cookingPizza() {
 
+    }
+
+    @Override
+    public void pizza() {
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Pepperoni{" +
+                "weight=" + super.getWeight() +
+                ", price=" + super.getPrice() +
+                ", type='" + super.getType()  +
+                "isSpicyPizza=" + isSpicyPizza + '\'' +
+                '}';
     }
 }
